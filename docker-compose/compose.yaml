@@ -1,0 +1,22 @@
+version: '3.2' # Yaml file version
+
+services: # Defining list of services
+  client:
+    image: image_client:lastest
+    container_name: container-client-$ENV
+    restart: always
+    ports:
+      - $CLIENT_PORT:3000
+    volumes:
+      # - [Path from host]:[Path to container]
+    networks:
+    # - Network that defined in networks key below. E.g.: my_network
+  foo:
+  
+# Define network configuration
+networks:
+  my_network:
+    driver: 'bridge'
+volumes:
+configs:
+secrets:
